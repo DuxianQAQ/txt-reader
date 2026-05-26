@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "本地TXT行阅读器",
+  "version": "1.1",
+  "description": "读取本地TXT，顶部展示，点击切换行",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "选择TXT文件"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
